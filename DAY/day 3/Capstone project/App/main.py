@@ -1,7 +1,7 @@
 #This file is the "entry point" of the application
 from fastapi import FastAPI
 from App.config import settings
-from App.Database import ping_database
+from App.database import ping_database
 
 #Creating FastAPI app instance.
 app=FastAPI(title=settings.APP_NAME)
