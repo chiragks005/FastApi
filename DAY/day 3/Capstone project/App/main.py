@@ -7,6 +7,7 @@ from App.routers import users
 from App.routers import categories
 from App.routers import tickets
 from App.routers import comments
+from App.routers import attachments
 
 # Creating FastAPI app instance
 app = FastAPI(title=settings.APP_NAME)
@@ -15,6 +16,7 @@ app.include_router(users.router)
 app.include_router(categories.router)
 app.include_router(tickets.router)
 app.include_router(comments.router)
+app.include_router(attachments.router)
 
 # This function runs once when the server starts. It checks the DB connection.
 @app.on_event("startup")
