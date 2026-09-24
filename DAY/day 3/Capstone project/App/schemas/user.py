@@ -5,7 +5,7 @@
 from datetime import datetime
 from typing import Optional
 from pydantic import BaseModel, EmailStr, Field
-from App.users import UserRole
+from App.models.user import UserRole
 
 class UserCreate(BaseModel):
     name:str = Field(...,min_length=2,max_length=100,description="Full name of the user")
