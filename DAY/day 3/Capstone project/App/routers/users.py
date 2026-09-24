@@ -6,7 +6,7 @@ from fastapi import APIRouter, Depends, HTTPException, status
 from pymongo.collection import Collection
 
 from App.dependencies import get_users_collection
-from App.schemas.user import UserCreate, UserUpdate, UserResponse
+from App.schemas.user import UserCreate, UserResponse
 
 router = APIRouter(prefix="/users", tags=["Users"])
 
@@ -71,7 +71,7 @@ def get_user(
 @router.put("/{user_id}", response_model=UserResponse)
 def update_user(
     user_id: str,
-    payload: UserUpdate,
+    payload: UserCreate,
     users_collection: Collection = Depends(get_users_collection),
 ):
     """
