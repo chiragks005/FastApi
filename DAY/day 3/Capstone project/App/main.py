@@ -3,7 +3,7 @@ from fastapi import FastAPI
 
 from App.config import settings
 from App.Database import ping_database
-from App import users
+from App.routers import users
 
 # Creating FastAPI app instance
 app = FastAPI(title=settings.APP_NAME)
